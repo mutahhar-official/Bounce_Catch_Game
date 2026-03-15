@@ -59,5 +59,5 @@ The game is designed primarily for mobile screens. Controls use touch events wit
 
 ## 📜 Author
 
-- This project is comppletely created by **Muhammad Mutahhar Khan** as part of his portfolio projects - no collaboration.
+- This project is completely created by **Muhammad Mutahhar Khan** as part of his portfolio projects - no collaboration.
 - LinkedIn: https://www.linkedin.com/in/muhammad-mutahhar-khan-562070378/
