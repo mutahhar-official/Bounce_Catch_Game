@@ -27,7 +27,8 @@
     <div class="instructions">
       <p><strong>DRAG</strong> the slider to catch the ball<br>
       Miss = lap ends · <strong>3 LAPS</strong> total<br>
-      Each catch = <strong>+10 pts</strong> · Speed increases</p>
+      Each catch = <strong>+10 pts</strong> · Speed increases<br>
+      Score &gt; 300 per lap = bar shrinks!</p>
     </div>
   </div>
 
@@ -45,15 +46,32 @@
         <div class="lap-ind" id="li3"></div>
       </div>
     </div>
-    <div class="hud-block" style="align-items:flex-end">
-      <div class="hud-label">Streak</div>
-      <div class="hud-value" id="streak-display"
-           style="color:var(--neon-yellow);text-shadow:0 0 12px var(--neon-yellow);">×1</div>
+    <div class="hud-block" style="align-items:flex-end; flex-direction:row; gap:12px; align-items:center;">
+      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:2px;">
+        <div class="hud-label">Streak</div>
+        <div class="hud-value" id="streak-display"
+             style="color:var(--neon-yellow);text-shadow:0 0 12px var(--neon-yellow);">×1</div>
+      </div>
+      <!-- Pause Button -->
+      <button class="pause-btn" id="pause-btn" title="Pause">
+        <span class="pause-icon">
+          <span></span><span></span>
+        </span>
+      </button>
     </div>
   </div>
 
   <!-- Game Canvas -->
   <canvas id="game-canvas"></canvas>
+
+  <!-- Pause Overlay -->
+  <div id="pause-overlay">
+    <div class="pause-title">PAUSED</div>
+    <div class="pause-icon-big">⏸</div>
+    <div class="pause-score-text" id="pause-score-text">SCORE: 000</div>
+    <button class="resume-btn" id="resume-btn"><span>RESUME</span></button>
+    <button class="pause-home-btn" id="pause-home-btn"><span>HOME</span></button>
+  </div>
 
   <!-- Lap transition overlay -->
   <div id="lap-overlay">
@@ -93,7 +111,6 @@
 
 </div>
 
-<!-- Load game script after DOM is ready -->
 <script src="game.js"></script>
 </body>
 </html>
