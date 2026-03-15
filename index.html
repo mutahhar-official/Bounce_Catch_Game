@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>BOUNCE CATCH</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+
+  <!-- Start Screen -->
+  <div class="screen" id="start-screen">
+    <div class="game-logo">
+      <div class="logo-sub">retro arcade</div>
+      <div class="logo-main">BOUNCE</div>
+      <div class="logo-tagline">catch · survive · score</div>
+    </div>
+    <div class="preview-ball"></div>
+    <div class="laps-preview">
+      <span class="laps-label">3 LAPS</span>
+      <div class="lap-dot"></div>
+      <div class="lap-dot"></div>
+      <div class="lap-dot"></div>
+    </div>
+    <button class="start-btn" id="start-btn"><span>START</span></button>
+    <div class="instructions">
+      <p><strong>DRAG</strong> the slider to catch the ball<br>
+      Miss = lap ends · <strong>3 LAPS</strong> total<br>
+      Each catch = <strong>+10 pts</strong> · Speed increases</p>
+    </div>
+  </div>
+
+  <!-- HUD (hidden until game starts) -->
+  <div id="hud" style="display:none;">
+    <div class="hud-block">
+      <div class="hud-label">Score</div>
+      <div class="hud-value" id="score-display">000</div>
+    </div>
+    <div class="hud-block" style="align-items:center">
+      <div class="hud-label" style="text-align:center">Lap</div>
+      <div class="lap-indicators">
+        <div class="lap-ind" id="li1"></div>
+        <div class="lap-ind" id="li2"></div>
+        <div class="lap-ind" id="li3"></div>
+      </div>
+    </div>
+    <div class="hud-block" style="align-items:flex-end">
+      <div class="hud-label">Streak</div>
+      <div class="hud-value" id="streak-display"
+           style="color:var(--neon-yellow);text-shadow:0 0 12px var(--neon-yellow);">×1</div>
+    </div>
+  </div>
+
+  <!-- Game Canvas -->
+  <canvas id="game-canvas"></canvas>
+
+  <!-- Lap transition overlay -->
+  <div id="lap-overlay">
+    <div class="lap-title">LAP ENDED</div>
+    <div class="lap-number" id="lap-number-display">1</div>
+    <div class="lap-score-display" id="lap-score-text">SCORE: 000</div>
+    <button class="lap-continue-btn" id="lap-continue-btn">NEXT LAP</button>
+  </div>
+
+  <!-- Game Over Screen -->
+  <div class="screen hidden" id="gameover-screen">
+    <div class="go-title">GAME COMPLETE</div>
+    <div class="go-score-big" id="final-score">000</div>
+    <div class="go-label">TOTAL SCORE</div>
+    <div class="go-laps">
+      <div class="go-lap-score">
+        <span class="lnum">LAP 1</span>
+        <span class="lval" id="ls1">0</span>
+      </div>
+      <div class="go-lap-score">
+        <span class="lnum">LAP 2</span>
+        <span class="lval" id="ls2">0</span>
+      </div>
+      <div class="go-lap-score">
+        <span class="lnum">LAP 3</span>
+        <span class="lval" id="ls3">0</span>
+      </div>
+    </div>
+    <div class="go-actions">
+      <button class="restart-btn" id="restart-btn"><span>PLAY AGAIN</span></button>
+      <button class="home-btn" id="home-btn"><span>HOME</span></button>
+    </div>
+  </div>
+
+  <!-- Red flash on miss -->
+  <div id="danger-flash"></div>
+
+</div>
+
+<!-- Load game script after DOM is ready -->
+<script src="game.js"></script>
+</body>
+</html>
