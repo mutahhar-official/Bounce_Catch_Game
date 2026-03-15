@@ -39,7 +39,7 @@ The game is designed primarily for mobile screens. Controls use touch events wit
 | Layer      | Technology                        |
 |------------|-----------------------------------|
 | Markup     | HTML5                             |
-| Styling    | CSS3 (variables, animations, `@keyframes`) |
+| Styling    | CSS3 |
 | Logic      | JavaScript (ES6+)         |
 | Rendering  | HTML5 Canvas 2D API               |
 | Fonts      | Google Fonts — Orbitron, Space Mono |
